@@ -1,13 +1,99 @@
-body {
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Eczar:regular,500,600,700,800);
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #f8f8f8;
+  font-family: "Poppins", "Eczar", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+img {
+  max-width: 100%;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .layout {
+    @apply px-12;
+  }
+
+  header {
+    @apply w-full h-[60px] flex items-center py-4  fixed top-0 left-0;
+  }
+
+  .logo {
+    @apply w-[80px];
+  }
+
+  header ul {
+    @apply flex items-center ml-12;
+  }
+
+  header ul li {
+    @apply mr-12;
+  }
+
+  header ul li a {
+    @apply text-primaryText text-[16px] font-normal
+    hover:text-secondaryText duration-150 ease-in;
+  }
+
+  section {
+    @apply grid grid-cols-2 gap-2 w-screen h-screen;
+  }
+
+  .homeData {
+    @apply flex items-start flex-col justify-center pt-[60px];
+  }
+
+  .homeData h1 {
+    @apply text-[4rem] tracking-wide font-Eczar w-[80%] leading-none;
+  }
+
+  .homeData h1 .dashboard {
+    @apply rotate-45 text-[2.5rem] !important;
+  }
+
+  .homeData h1 .codeBtn {
+    @apply bg-secondaryText text-mainBg mx-2 w-[50px] h-[50px] min-w-[50px] min-h-[50px];
+  }
+
+  .homeData .getStarted {
+    @apply bg-secondaryText py-2 px-3 my-8 
+    hover:bg-secondaryText hover:shadow-mainShadow;
+  }
+
+  .homeData .getStarted a {
+    @apply text-primaryText flex items-center
+      hover:text-white;
+  }
+
+  .homeData .getStarted a .icon {
+    @apply ml-2 rotate-[-45deg]
+    hover:text-white;
+  }
+
+  .homeImg {
+    @apply bg-secondaryText;
+  }
+
+  .homeImg .mainImg {
+    @apply w-[495px];
+  }
 }
