@@ -38,23 +38,9 @@ ReactDOM.render(
         </Button>
       </div>
       <div className="homeImg pr-16">
-        <svg
-          className="svg"
-          xmlns="http://www.w3.org/2000/svg"
-          width="1015.115"
-          height="951.574"
-          viewBox="0 0 1015.115 951.574"
-        >
-          <path
-            id="Path_1"
-            data-name="Path 1"
-            d="M529.785,88.3,279.609,144.219l400.282,176.6-376.736-17.66L1197.9,676.948,785.848,626.912l482.693,211.914L830,977.159"
-            transform="translate(-266.491 -56.58)"
-            fill="none"
-            stroke="#def253"
-            stroke-linejoin="bevel"
-            stroke-width="65"
-          />
+        {/* prettier-ignore */}
+        <svg className="svg" xmlns="http://www.w3.org/2000/svg" width="1015.115" height="951.574" viewBox="0 0 1015.115 951.574">
+        <path id="Path_1" data-name="Path 1" d="M529.785,88.3,279.609,144.219l400.282,176.6-376.736-17.66L1197.9,676.948,785.848,626.912l482.693,211.914L830,977.159" transform="translate(-266.491 -56.58)" fill="none" stroke="#def253" stroke-linejoin="bevel" stroke-width="65"/>
         </svg>
       </div>
     </section>
