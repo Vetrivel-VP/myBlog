@@ -90,10 +90,14 @@ img {
   }
 
   .homeImg {
-    @apply bg-secondaryText;
+    @apply bg-secondaryText relative;
   }
 
   .homeImg .mainImg {
     @apply w-[495px];
+  }
+
+  .homeImg .svg {
+    @apply absolute w-full h-full;
   }
 }
