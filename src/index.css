@@ -13,6 +13,10 @@ body {
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 code {
@@ -30,40 +34,46 @@ img {
 
 @layer components {
   .layout {
-    @apply px-12;
+    @apply px-12
+    sm:px-2;
   }
 
   header {
-    @apply w-full h-[60px] flex items-center py-4  fixed top-0 left-0;
+    @apply w-full h-[60px] flex items-center py-4  fixed top-0 left-0 z-[101];
   }
 
   .logo {
-    @apply w-[80px];
+    @apply md:w-[80px] sm:w-[60px];
   }
 
   header ul {
-    @apply flex items-center ml-12;
+    @apply flex items-center md:ml-12
+    sm:ml-2;
   }
 
   header ul li {
-    @apply mr-12;
+    @apply md:mr-12 sm:mr-4;
   }
 
   header ul li a {
-    @apply text-primaryText text-[16px] font-normal
-    hover:text-secondaryText duration-150 ease-in;
+    @apply text-primaryText md:text-[16px] font-normal
+    hover:text-secondaryText duration-150 ease-in 
+    sm:text-[14px];
   }
 
   section {
-    @apply grid grid-cols-2 gap-2 w-screen h-screen;
+    @apply grid grid-cols-2 gap-2 w-screen md:h-screen
+    sm:h-[unset];
   }
 
   .homeData {
-    @apply flex items-start flex-col justify-center pt-[60px];
+    @apply flex items-start flex-col justify-center pt-[60px]
+    sm:col-span-6 md:col-span-1;
   }
 
   .homeData h1 {
-    @apply text-[4rem] tracking-wide font-Eczar w-[80%] leading-none;
+    @apply lg:text-[4rem] tracking-wide font-Eczar md:w-[90%] lg:w-[80%] leading-none
+    sm:text-[2.5rem] sm:w-full;
   }
 
   .homeData h1 .dashboard {
@@ -90,14 +100,49 @@ img {
   }
 
   .homeImg {
-    @apply bg-secondaryText relative;
-  }
-
-  .homeImg .mainImg {
-    @apply w-[495px];
+    @apply bg-secondaryText relative 
+    sm:col-span-6 sm:h-[400px] md:col-span-1 md:h-auto;
   }
 
   .homeImg .svg {
-    @apply absolute w-full h-full;
+    @apply absolute w-full h-full z-0;
+  }
+
+  .homeImg .profileImage {
+    @apply absolute z-10 bottom-0 right-0 w-[100%];
+  }
+
+  .homeImg .mainCode {
+    @apply absolute top-[25%] md:left-[-5%] lg:left-[-20%] z-[1] w-[80%] shadow-xl
+     sm:left-0;
+  }
+
+  .homeImg .warning {
+    @apply absolute bottom-[-20px] right-[5%] w-[20%] rotate-[-35deg] z-10
+    sm:hidden md:block;
+  }
+
+  .homeImg .nameContainer {
+    @apply flex items-center absolute bottom-0 left-0 h-[50px] bg-[rgba(0,0,0,0.4)]
+    px-4 rounded-tr-md rounded-br-md filter  backdrop-filter backdrop-blur-sm z-10;
+  }
+
+  .homeImg .nameContainer h3 {
+    @apply text-white;
+  }
+
+  .homeImg .nameContainer .circle {
+    @apply relative w-[15px] h-[15px] bg-circle rounded-full
+    before:absolute before:w-[25px] before:h-[25px] before:rounded-full 
+    before:border-2 before:border-circle before:top-[-5px] before:left-[-5px] before:filter
+    before:blur-sm mr-4;
+  }
+
+  .imageContainer {
+    @apply flex w-screen  items-center justify-evenly sm:px-0 flex-wrap my-14;
+  }
+
+  .imageContainer img {
+    @apply sm:w-[130px] md:w-[100px]  object-cover;
   }
 }
